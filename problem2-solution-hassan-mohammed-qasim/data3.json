@@ -1,0 +1,16 @@
+{
+    "fridge":
+    {
+        "tomato" : 1,
+        "onion" : 2
+    },
+
+    "ingredients":
+    {
+        "tomato" : 1,
+        "onion" : 2,
+        "meat" :1
+    }
+
+
+}
