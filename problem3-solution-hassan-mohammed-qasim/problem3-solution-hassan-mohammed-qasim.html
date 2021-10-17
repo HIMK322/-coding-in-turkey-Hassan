@@ -1,0 +1,85 @@
+<html>
+  <body>
+    <h2>Fridge Items</h2>
+    <table>
+      <thead>
+        <td>
+          <b>Item</b>
+        </td>
+        <td>
+          <b>Count</b>
+        </td>
+        <td>
+          <b>Remove</b>
+        </td>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cucumber</td>
+          <td>3</td>
+          <td><button onClick="remove(event)">X</button></td>
+        </tr>
+        <tr>
+          <td>Lettuce</td>
+          <td>5</td>
+          <td><button onClick="remove(event)">X</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+
+    <input type="text">
+    <button onClick="add(event)">Add</button>
+    
+  </body>
+
+  <script>
+    function remove(event) {
+      event.target.parentElement.parentElement.style.display='none'
+    }
+    function add(event) {
+
+      const text = document.querySelector('input').value.split(" ");
+            
+      if ((text.length  != 2) ||( parseInt(text[0]) == parseInt(text[0]) ) || ( parseInt(text[1]) != parseInt(text[1]) ))
+      {     
+        const para = document.createElement("p") 
+        const err = document.createTextNode("input must be a name and a number separted by space")
+        para.appendChild(err)
+        document.querySelector('body').appendChild(para)
+      }
+      else{
+
+      const elem = document.createElement("tr")
+      const ele1 = document.createElement("td")
+      const ele2 = document.createElement("td")
+      const ele3 = document.createElement("td")
+
+     
+
+      const text1 = document.createTextNode(text[0])
+      const text2 = document.createTextNode(text[1])
+      const text3 = document.createTextNode("X")
+
+      const button = document.createElement("button")
+      button.setAttribute("onClick", "remove(event)")
+      button.appendChild(text3)
+
+      ele1.appendChild(text1)
+      ele2.appendChild(text2)
+      ele3.appendChild(button)
+
+      elem.appendChild(ele1)
+      elem.appendChild(ele2)
+      elem.appendChild(ele3)
+      document.querySelector('tbody').appendChild(elem)
+    }}
+  </script>
+
+
+  <style>
+    td {
+      padding-right: 50px;
+    }
+  </style>
+</html>
